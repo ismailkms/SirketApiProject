@@ -1,0 +1,26 @@
+﻿@model PersonelModel
+
+@{
+    ViewData["Title"] = "Personel Güncelle";
+    Layout = "_AdminLayout";
+}
+
+<h1>Personel Güncelleme Sayfası</h1>
+<form method="post">
+    <label>Adı Soyadı</label>
+    <input type="text" asp-for="@Model.PersonelAdi" class="form-control" />
+    <br />
+    <label>Kullanıcı Adı</label>
+    <input type="text" asp-for="@Model.KullaniciAdi" class="form-control" />
+    <br />
+    <label>Şifre</label>
+    <input type="text" asp-for="@Model.Password" class="form-control" />
+    <br />
+    <label>Departman</label>
+    <input type="text" asp-for="@Model.DepartmanId" class="form-control" />
+    <br />
+    <label>Rol</label>
+    <input type="text" asp-for="@Model.RoleId" class="form-control" />
+    <br />
+    <button type="submit" class="btn btn-info">Güncelle</button>
+</form>

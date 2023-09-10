@@ -1,0 +1,14 @@
+﻿@model SirketModel
+
+@{
+    ViewData["Title"] = "Sirket Güncelle";
+    Layout = "_AdminLayout";
+}
+
+<h1>Sirket Güncelleme Sayfası</h1>
+<form method="post">
+    <label>Adı</label>
+    <input type="text" asp-for="@Model.SirketAdi" class="form-control" />
+    <br />
+    <button type="submit" class="btn btn-info">Güncelle</button>
+</form>

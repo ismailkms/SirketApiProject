@@ -1,0 +1,77 @@
+﻿﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Core Blog</title>
+    <link rel="stylesheet" href="~/basicadmintemplate/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/basicadmintemplate/assets/vendors/css/vendor.bundle.base.css">
+    <link href="~/basicadmintemplate/assets/vendors/css/vendor.bundle.base.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/basicadmintemplate/assets/css/style.css">
+    <link rel="shortcut icon" href="~/basicadmintemplate/assets/images/logo.png" />
+</head>
+<body>
+    <div class="container-scroller">
+       
+        <div class="container-fluid page-body-wrapper">
+
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/Index">
+                            <span class="menu-title">Anasayfa</span>
+                            <i class="mdi mdi-home menu-icon"></i>
+                        </a>
+                    </li>
+                    @if (User.IsInRole("Müdür"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Sirket/Index">
+                                <span class="menu-title">Şirket</span>
+                                <i class="mdi mdi-bank menu-icon"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Departman/Index">
+                                <span class="menu-title">Departman</span>
+                                <i class="mdi mdi-content-paste menu-icon"></i>
+                            </a>
+                        </li>
+                    }
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Personel/Personel">
+                            <span class="menu-title">Personel</span>
+                            <i class="mdi mdi-account-multiple menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Login/LogOut">
+                            <span class="menu-title">Çıkış Yap</span>
+                            <i class="mdi mdi-logout menu-icon"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="main-panel">
+                <div class="content-wrapper">
+
+                    @RenderBody()
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="~/basicadmintemplate/assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="~/basicadmintemplate/assets/js/off-canvas.js"></script>
+    <script src="~/basicadmintemplate/assets/js/hoverable-collapse.js"></script>
+    <script src="~/basicadmintemplate/assets/js/misc.js"></script>
+</body>
+</html>

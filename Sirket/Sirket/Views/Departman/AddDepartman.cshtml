@@ -1,0 +1,17 @@
+﻿@model DepartmanModel
+
+@{
+    ViewData["Title"] = "Departman Ekle";
+    Layout = "_AdminLayout";
+}
+
+<h1>Departman Ekleme Sayfası</h1>
+<form method="post">
+    <label>Adı</label>
+    <input type="text" asp-for="@Model.DepartmanAdi" class="form-control" />
+    <br />
+    <label>Şirket Id</label>
+    <input type="text" asp-for="@Model.SirketId" class="form-control" />
+    <br />
+    <button type="submit" class="btn btn-info">Ekle</button>
+</form>

@@ -1,0 +1,42 @@
+﻿@model List<DepartmanModel>
+@{
+    ViewData["Title"] = "Departman";
+    Layout = "_AdminLayout";
+}
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Departmanlar</h4>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Departman Adı</th>
+                            <th>Şirket Id</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.DepartmanAdi</td>
+                                <td>@item.SirketId</td>
+                                <td>
+                                    <a href="/Departman/UpdateDepartman/@item.Id" class="btn btn-xs btn-outline btn-warning">Düzenle</a>
+                                    <a href="/Departman/DeleteDepartman/@item.Id" class="btn btn-xs btn-outline btn-danger">Sil</a>
+
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+                <br />
+                <a href="/Departman/AddDepartman" class="btn btn-xs btn-outline btn-info">Departman Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>
